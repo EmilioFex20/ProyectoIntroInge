@@ -9,7 +9,7 @@ def inserta_datos():
     )
     
     mycursor = mydb.cursor()
-    sql="INSERT INTO usuario (email,contraseña,nombre,licencia) VALUES ('{0}','{1}','{2}','{3}')".format(email_entry.get(), contrasena_entry.get())
+    sql="INSERT INTO usuario (email,contraseña,nombre,licencia) VALUES ('{0}','{1}','{2}','{3}')".format(email_entry.get(), contrasena_entry.get(), nombre_entry.get(), licencia_entry.get())
 
     try:
         mycursor.execute(sql)
