@@ -8,7 +8,7 @@
   /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
   /* HSL color mode */
   --hue-color: 224;
-  --first-color: brown;
+  --first-color: #54350D;
   --second-color: hsl(var(--hue-color), 56%, 12%);
   --nav-bar-color: white;
   /*===== Fuente y tipografia =====*/
@@ -113,8 +113,13 @@ img {
   width: 100%;
   position: fixed;
   top: 0;
-  left: 0;
+  left: 100 px;
   z-index: var(--z-fixed);
+  background-image: url("/Página\ web\ de\ Zomascot/Images/Cesped.jpg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-position: center bottom;
+  background-size: cover;
   background-color:rgb(243, 173, 44);
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
