@@ -1,8 +1,8 @@
 /*===== GOOGLE FONTS =====*/
-@import url('https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 /*===== VARIABLES CSS =====*/
 :root {
-  --header-height: 4rem;
+  --header-height: 4.5rem;
   --font-semi: 600;
   /*===== Colores =====*/
   /*Purple 260 - Red 355 - Blue 224 - Pink 340*/
@@ -12,7 +12,7 @@
   --second-color: hsl(var(--hue-color), 56%, 12%);
   --nav-bar-color: white;
   /*===== Fuente y tipografia =====*/
-  --body-font:'Shadows Into Light', cursive;;
+  --body-font:'Roboto', sans-serif;
   --big-font-size: 2rem;
   --h2-font-size: 1.25rem;
   --normal-font-size: .938rem;
