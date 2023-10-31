@@ -5,14 +5,14 @@ import os
 def menu_pantalla():
     global pantalla
     pantalla=Tk()
-    pantalla.geometry("300x380")#DIMENSIONES DE LA VENTANA
-    pantalla.title("Login con tkinter")#TITULO DE LA VENTANA
+    pantalla.geometry("300x380")
+    pantalla.title("Login con tkinter")
 
-    Label(text="Escoja su opción", bg="LightGreen", width="300", height="2", font=("Calibri", 13)).pack()#ETIQUETA CON TEXTO
+    Label(text="Escoja su opción", bg="LightGreen", width="300", height="2", font=("Calibri", 13)).pack()
     Label(text="").pack()
-    Button(text="Iniciar sesion", height="2", width="30", command=inicio_sesion).pack() #BOTÓN "Acceder"
+    Button(text="Iniciar sesion", height="2", width="30", command=inicio_sesion).pack() 
     Label(text="").pack()
-    Button(text="Registrarse", height="2", width="30", command=registrar).pack() #BOTÓN "Registrarse".
+    Button(text="Registrarse", height="2", width="30", command=registrar).pack()
     Label(text="").pack()
     pantalla.mainloop()
 def inicio_sesion():
@@ -43,7 +43,7 @@ def inicio_sesion():
     contrasena_usuario_entry.pack()
     Label(pantalla1).pack()
 
-    Button(pantalla1, text="Iniciar sesion").pack() #BOTÓN "Iniciar sesion"
+    Button(pantalla1, text="Iniciar sesion").pack()
 
 def registrar():
     global pantalla2
@@ -51,43 +51,47 @@ def registrar():
     pantalla2.title("Registro")
     pantalla2.geometry("400x250")
 
-    global nombreusuario_entry
+    global correo_entry
     global contrasena_entry
+    global usuario_entry
  
-    nombreusuario_entry = StringVar()
+    correo_entry = StringVar()
     contrasena_entry = StringVar()
+    usuario_entry = StringVar()
 
     Label(pantalla2, text="Cree un usuario y contraseña").pack()
     Label(pantalla2, text="").pack()
  
-    Label(pantalla2, text="Usuario").pack()
-    nombreusuario_entry= Entry(pantalla2)
-    nombreusuario_entry.pack()
+    Label(pantalla2, text="Correo").pack()
+    correo_entry= Entry(pantalla2)
+    correo_entry.pack()
     Label(pantalla2).pack()
     Label(pantalla2, text="Contraseña").pack()
     contrasena_entry = Entry(pantalla2,show="*")
     contrasena_entry.pack()
+    Label(pantalla2, text="Usuario").pack()
+    usuario_entry= Entry(pantalla2)
+    usuario_entry.pack()
     Label(pantalla2).pack()
     Button(pantalla2, text="Registrar",command=inserta_datos).pack()
 
+#Coneccion a base de datos para insertar datos de cuenta(registro)
 def inserta_datos():
     mydb = mysql.connector.connect(
     host="localhost",
     user="root",
-    password="",
+    password="Daba.2295",
+    port="3306",
     database="database"
     )
-    mycursor = mydb.cursor()
-    sql="INSERT INTO usuarios (email,contraseña) VALUES ('{0}','{1}')".format(nombreusuario_entry.get(), contrasena_entry.get())
-    #sql ="INSERT INTO usuarios (email,contraseña) VALUES (%s,%s)"
-    #val = (nombreusuario_entry.get(), contrasena_entry.get())
     try:
-        mycursor.execute(sql)
+        mycursor = mydb.cursor()
+        sql = "INSERT INTO usuario (correo,contrasena,usuario) VALUES (%s,%s,%s)"
+        mycursor.execute(sql,(correo_entry.get(),contrasena_entry.get(),usuario_entry.get()))
         mydb.commit()
         messagebox.showinfo(message="Registro Exitoso", title="Aviso")
     except:
         mydb.rollback()
-        messagebox.showinfo(message="No registrado", title="Aviso")  
-    mydb.close()    
+        messagebox.showinfo(message="Registro Erroneo", title="Aviso")
 
 menu_pantalla()
