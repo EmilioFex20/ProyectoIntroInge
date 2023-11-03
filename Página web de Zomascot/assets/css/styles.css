@@ -511,7 +511,7 @@ img {
     padding-top: 2rem;
   }
   .about__img img {
-    width: 300px;
+    width: 400px;
   }
   .skills__container {
     grid-template-columns: repeat(2, 1fr);
