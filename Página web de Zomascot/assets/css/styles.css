@@ -260,40 +260,40 @@ img {
   box-shadow: 0px 10px 36px rgba(0, 0, 0, 0.15);
 }
 
-/* ===== ABOUT =====*/
-.about__container {
+/* ===== nosotros =====*/
+.nosotros__container {
   row-gap: 2rem;
   text-align: center;
 }
 
-.about__subtitle {
+.nosotros__subtitle {
   margin-bottom: var(--mb-2);
 }
 
-.about__img {
+.nosotros__img {
   justify-self: center;
 }
 
-.about__img img {
+.nosotros__img img {
   width: 200px;
   border-radius: .5rem;
 }
 
-/* ===== SKILLS =====*/
-.skills__container {
+/* ===== informacion =====*/
+.informacion__container {
   row-gap: 2rem;
   text-align: center;
 }
 
-.skills__subtitle {
+.informacion__subtitle {
   margin-bottom: var(--mb-2);
 }
 
-.skills__text {
+.informacion__text {
   margin-bottom: var(--mb-4);
 }
 
-.skills__data {
+.informacion__data {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -305,18 +305,18 @@ img {
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
 }
 
-.skills__icon {
+.informacion__icon {
   font-size: 2rem;
   margin-right: var(--mb-2);
   color: var(--first-color);
 }
 
-.skills__names {
+.informacion__names {
   display: flex;
   align-items: center;
 }
 
-.skills__bar {
+.informacion__bar {
   position: absolute;
   left: 0;
   bottom: 0;
@@ -326,23 +326,23 @@ img {
   z-index: var(--z-back);
 }
 
-.skills__html {
+.informacion__html {
   width: 95%;
 }
 
-.skills__css {
+.informacion__css {
   width: 85%;
 }
 
-.skills__js {
+.informacion__js {
   width: 65%;
 }
 
-.skills__ux {
+.informacion__ux {
   width: 85%;
 }
 
-.skills__img {
+.informacion__img {
   border-radius: .5rem;
 }
 
@@ -443,12 +443,12 @@ img {
     width: 300px;
     bottom: 25%;
   }
-  .about__container {
+  .nosotros__container {
     grid-template-columns: repeat(2, 1fr);
     align-items: center;
     text-align: initial;
   }
-  .skills__container {
+  .informacion__container {
     grid-template-columns: .7fr;
     justify-content: center;
     column-gap: 1rem;
@@ -506,13 +506,13 @@ img {
     width: 400px;
     bottom: 10%;
   }
-  .about__container {
+  .nosotros__container {
     padding-top: 2rem;
   }
-  .about__img img {
+  .nosotros__img img {
     width: 400px;
   }
-  .skills__container {
+  .informacion__container {
     grid-template-columns: repeat(2, 1fr);
     column-gap: 2rem;
     align-items: center;
