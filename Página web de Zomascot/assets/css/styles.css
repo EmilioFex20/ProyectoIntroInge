@@ -18,7 +18,7 @@
   --normal-font-size: .938rem;
   --smaller-font-size: .75rem;
   --nav-bar-font:25px;
-  /*===== Margenes =====*/
+  /*===== Márgenes =====*/
   --mb-2: 1rem;
   --mb-4: 2rem;
   --mb-5: 2.5rem;
@@ -120,7 +120,6 @@ img {
   background-attachment: fixed;
   background-position: center bottom;
   background-size: cover;
-  background-color:rgb(243, 173, 44);
   box-shadow: 0 1px 4px rgba(146, 161, 176, 0.15);
 }
 
@@ -195,54 +194,54 @@ img {
   right: 0;
 }
 
-/*===== HOME =====*/
-.home {
+/*===== INICIO =====*/
+.inicio {
   position: relative;
   row-gap: 5rem;
   padding: 4rem 0 5rem;
 }
 
-.home__data {
+.inicio__data {
   align-self: center;
 }
 
-.home__title {
+.inicio__title {
   font-size: var(--big-font-size);
   margin-bottom: var(--mb-5);
 }
 
-.home__title-color {
+.inicio__title-color {
   color: var(--first-color);
 }
 
-.home__social {
+.inicio__social {
   display: flex;
   flex-direction: column;
 }
 
-.home__social-icon {
+.inicio__social-icon {
   width: max-content;
   margin-bottom: var(--mb-2);
   font-size: 1.5rem;
   color: var(--second-color);
 }
 
-.home__social-icon:hover {
+.inicio__social-icon:hover {
   color: var(--first-color);
 }
 
-.home__img {
+.inicio__img {
   position: absolute;
   right: 0;
   bottom: 0;
   width: 260px;
 }
 
-.home__blob {
+.inicio__blob {
   fill: var(--first-color);
 }
 
-.home__blob-img {
+.inicio__blob-img {
   width: 100%;
 }
 
@@ -417,30 +416,30 @@ img {
 
 /* ===== MEDIA QUERIES=====*/
 @media screen and (max-width: 320px) {
-  .home {
+  .inicio {
     row-gap: 2rem;
   }
-  .home__img {
+  .inicio__img {
     width: 200px;
   }
 
 }
 
 @media screen and (min-width: 576px) {
-  .home {
+  .inicio {
     padding: 4rem 0 2rem;
   }
-  .home__social {
+  .inicio__social {
     padding-top: 0;
     padding-bottom: 2.5rem;
     flex-direction: row;
     align-self: flex-end;
   }
-  .home__social-icon {
+  .inicio__social-icon {
     margin-bottom: 0;
     margin-right: var(--mb-4);
   }
-  .home__img {
+  .inicio__img {
     width: 300px;
     bottom: 25%;
   }
@@ -500,10 +499,10 @@ img {
   .nav__link {
     color: var(--nav-bar-color);
   }
-  .home {
+  .inicio {
     padding: 8rem 0 2rem;
   }
-  .home__img {
+  .inicio__img {
     width: 400px;
     bottom: 10%;
   }
@@ -530,10 +529,10 @@ img {
     margin-left: auto;
     margin-right: auto;
   }
-  .home {
+  .inicio {
     padding: 10rem 0 2rem;
   }
-  .home__img {
+  .inicio__img {
     width: 450px;
   }
 }
@@ -590,6 +589,7 @@ opacity: .25;
 animation-name: opacity-11;
 opacity: .1;
 }
+
 #a{
 left: 20px;
 top: 15px;
