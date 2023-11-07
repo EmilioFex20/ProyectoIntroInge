@@ -20,7 +20,6 @@ class App extends StatelessWidget {
 
 class AppHome extends StatelessWidget {
   const AppHome({super.key});
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(

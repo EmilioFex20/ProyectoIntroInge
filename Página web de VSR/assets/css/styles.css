@@ -115,7 +115,7 @@ img {
   top: 0;
   left: 100 px;
   z-index: var(--z-fixed);
-  background-image: url("/Página\ web\ de\ Zomascot/Images/Cesped.jpg");
+  background-image: url("/Página\ web\ de\ VSR/Images/Cesped.jpg");
   background-repeat: no-repeat;
   background-attachment: fixed;
   background-position: center bottom;
@@ -195,6 +195,10 @@ img {
 }
 
 /*===== INICIO =====*/
+.inicio__container{
+  row-gap: 2rem;
+  text-align: center;
+}
 .inicio {
   position: relative;
   row-gap: 5rem;
@@ -231,10 +235,7 @@ img {
 }
 
 .inicio__img {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  width: 260px;
+  justify-self: center;
 }
 
 .inicio__blob {
@@ -424,7 +425,6 @@ img {
   }
 
 }
-
 @media screen and (min-width: 576px) {
   .inicio {
     padding: 4rem 0 2rem;
@@ -442,6 +442,11 @@ img {
   .inicio__img {
     width: 300px;
     bottom: 25%;
+  }
+  .inicio__container{
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: initial;
   }
   .nosotros__container {
     grid-template-columns: repeat(2, 1fr);
@@ -505,6 +510,9 @@ img {
   .inicio__img {
     width: 400px;
     bottom: 10%;
+  }
+  .inicio__container{
+    padding-top: 2rem;
   }
   .nosotros__container {
     padding-top: 2rem;
