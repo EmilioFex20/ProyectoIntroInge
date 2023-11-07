@@ -80,6 +80,7 @@
   animation-duration:11s ;
   }
 
+
 @media screen and (min-width: 968px) {
   :root {
     --big-font-size: 3.5rem;
@@ -476,6 +477,7 @@ img {
   }
 
 }
+
 @media screen and (min-width: 400px) {
   .huellitas{
     position: absolute;
@@ -538,7 +540,6 @@ img {
     animation-duration:11s ;
     }
 }
-
 
 @media screen and (min-width: 576px) {
   .inicio {
@@ -711,4 +712,55 @@ opacity: .25;
 .catdoor-faded-1{
 animation-name: opacity-11;
 opacity: .1;
+}
+
+#a{
+left: 20px;
+top: 15px;
+animation-duration:.5s ;
+}
+#b{
+left: 50px;
+top: 50px;
+animation-duration:2s ;
+}
+#c{
+left: 140px;
+top: 20px;
+animation-duration:4.5s ;
+}
+#d{
+left: 180px;
+top: 60px;
+animation-duration:6s ;
+}
+#e{
+left: 260px;
+top: 20px;
+animation-duration:6.5s ;
+}
+#f{
+left: 300px;
+top: 60px;
+animation-duration:8s ;
+}
+#g{
+left: 350px;
+top: 20px;
+animation-duration:9.5s ;
+}
+#h{
+left: 400px;
+top: 60px;
+animation-duration:11s ;
+}
+#i{
+left: 450px;
+top: 20px;
+animation-duration:11s ;
+}
+#j{
+left: 500px;
+top: 60px;
+animation-duration:11s ;
 }
