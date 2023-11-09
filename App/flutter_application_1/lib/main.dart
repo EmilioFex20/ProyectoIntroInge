@@ -24,8 +24,7 @@ class AppHome extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Login"),
-        leading: const Icon(Icons.ondemand_video),
+        title: const Text("Login Page"),
       ),
       floatingActionButton: FloatingActionButton(
         child: const Icon(Icons.add_shopping_cart_outlined),

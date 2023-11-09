@@ -481,12 +481,15 @@ img {
 @media screen and (min-width: 400px) {
   .huellitas{
     position: absolute;
-    -ms-transform: rotate(75deg); /* IE 9 */
+    -ms-transform: rotate(75deg); 
     transform: rotate(75deg);
     max-width: 15px;
     max-height: 30px;
     z-index: var(--z-fixed);
     pointer-events: none;
+    }
+    .inicio__img {
+      width: 250px;
     }
     
   #a{
