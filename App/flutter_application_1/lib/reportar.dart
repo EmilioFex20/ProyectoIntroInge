@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/mapaparareportar.dart';
 import 'package:image_picker/image_picker.dart';
 import 'dart:io';
 //import 'package:flutter_application_1/firstscreen.dart';
@@ -18,7 +21,7 @@ class _ReportarScreenState extends State<ReportarScreen> {
 
   final ImagePicker picker = ImagePicker();
 
-  //we can upload image from camera or from gallery based on parameter
+  //podemos subir una imagen desde la cámara o la galeria, dependiendo el parámetro
   Future getImage(ImageSource media) async {
     var img = await picker.pickImage(source: media);
 
@@ -27,6 +30,7 @@ class _ReportarScreenState extends State<ReportarScreen> {
     });
   }
 
+//función invocada una vez el usuario quiera subir una imagen
   void myAlert() {
     showDialog(
         context: context,
@@ -40,7 +44,7 @@ class _ReportarScreenState extends State<ReportarScreen> {
               child: Column(
                 children: [
                   ElevatedButton(
-                    //if user click this button, user can upload image from gallery
+                    //botón de usuario para subir imagen desde la galeria
                     onPressed: () {
                       Navigator.pop(context);
                       getImage(ImageSource.gallery);
@@ -53,7 +57,7 @@ class _ReportarScreenState extends State<ReportarScreen> {
                     ),
                   ),
                   ElevatedButton(
-                    //if user click this button. user can upload image from camera
+                    //botón de usuario para subir imagen tomada por la cámara
                     onPressed: () {
                       Navigator.pop(context);
                       getImage(ImageSource.camera);
@@ -82,6 +86,31 @@ class _ReportarScreenState extends State<ReportarScreen> {
         child: Wrap(children: [
           Column(
             children: [
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    height: 50,
+                    width: 250,
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: TextButton(
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const MapaParaReportar()),
+                        );
+                      },
+                      child: const Text(
+                        'Ubicar en mapa',
+                        style: TextStyle(color: Colors.white, fontSize: 25),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: SizedBox(
@@ -113,20 +142,20 @@ class _ReportarScreenState extends State<ReportarScreen> {
                 onPressed: () {
                   myAlert();
                 },
-                child: Text('Subir foto'),
+                child: const Text('Subir imagen'),
               ),
               const SizedBox(
                 height: 10,
               ),
-              //if image not null show the image
-              //if image null show text
+              //si la imagen no es null mostrar la imagen
+              //si la imagen es null mostrar el texto
               image != null
                   ? Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8),
                         child: Image.file(
-                          //to show image, you type like this.
+                          //mostrar la imagen
                           File(image!.path),
                           fit: BoxFit.cover,
                           width: MediaQuery.of(context).size.width,
