@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/loginscreen.dart';
+import 'package:flutter_application_1/mapareportes.dart';
 import 'package:flutter_application_1/reportar.dart';
 
 class FirstScreen extends StatefulWidget {
@@ -60,7 +61,7 @@ class _FirstScreenState extends State<FirstScreen> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const Loginscreen()),
+                          builder: (context) => const MapadeReportes()),
                     );
                   },
                   child: const Text(

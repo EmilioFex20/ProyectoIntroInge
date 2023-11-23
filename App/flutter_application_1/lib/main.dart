@@ -9,7 +9,10 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      title: 'Vive Sin Rickettsia',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        primaryColor: Colors.white,
         brightness: Brightness.light,
       ),
       darkTheme: ThemeData(brightness: Brightness.dark),
