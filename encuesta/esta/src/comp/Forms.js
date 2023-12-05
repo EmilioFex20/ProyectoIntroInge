@@ -127,7 +127,7 @@ errors.cp && <span>{errors.cp.message}</span>
 <br></br>
 
 <div> 
-<label>Número de teléfono (solo número) </label>
+<label>Número de teléfono (solo números) </label>
 <input type="number" {...register('numtel', {
     required:true,
       pattern: {
@@ -159,8 +159,9 @@ errors.numref && <span>{errors.numref.message}</span>
 
 <br></br>
 
-<input type="submit" value="enviar"/>
-
+<center>
+<input type="submit" class="fancybtn" value="Enviar"/>
+</center>
 </form>
 
 

@@ -1,10 +1,50 @@
 .App {
-  text-align: center;
+  text-align: left;
+  margin-left: 20%;
+  margin-right: 20%;
+}
+
+body {
+  background-image: url("img/bg_img.png");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+@font-face {
+  font-family: ShadowsIntoLight;
+  src: url(img/ShadowsIntoLight.ttf);
+}
+
+h1 {
+  text-align: center; 
+  color: #fffbf7;
+  font-family: ShadowsIntoLight;
+  background-color: rgba(2, 20, 4, 0.6);
+  border-radius: 10px;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+
+input {
+  margin-left: 5px;
+}
+
+input.fancybtn {
+  background-color: #719deb;
+  border-radius: 5px;
+  width: 85px;
+  height: 35px;
+  font-size: 20px;
+  margin: 10px;
+  border-color: #a1a7b3;
+  color: azure;
+}
+
+img {
+  width: 25%;
 }
 
 @media (prefers-reduced-motion: no-preference) {

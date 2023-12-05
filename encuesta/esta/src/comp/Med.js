@@ -134,8 +134,9 @@ function Med(){
         Piojo
       </label>
 
-      <label>
-  <input
+<br></br><br></br>
+<label>
+<input
     type="radio"
     value="otro"
     checked={opcs === 'otro'}
@@ -153,15 +154,9 @@ function Med(){
 )}
      <p>Opción seleccionada: {opcs}</p>
     </div>
-
-
-
-
-
-
-
-
     <br></br>
+
+
 <div>
       <h2>¿Un médico ha comprobado que usted es portador/portadora de ricketssia?</h2>
       <label>
@@ -307,9 +302,9 @@ errors.ind_especiales && <span>{errors.ind_especiales.message}</span>
 
 
 
-    
-    <input type="submit" value="enviar"/>
-    
+ <center>   
+    <input type="submit" class="fancybtn" value="Enviar"/>
+  </center>    
     </form>
     
     
@@ -324,7 +319,7 @@ errors.ind_especiales && <span>{errors.ind_especiales.message}</span>
     
     
     
-    
+  
     }
-    
+  
     export default Med;

@@ -5,7 +5,6 @@ import Med from './comp/Med';
 function App() {
   return (
     <div className="App">
-     
      <h1> Encuesta </h1>
 
      <Forms/>
