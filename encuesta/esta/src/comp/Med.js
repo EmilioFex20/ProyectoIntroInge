@@ -21,6 +21,23 @@ function Med(){
       data.picadura = opcs === 'otro' ? otroTexto : opcs;
       data.portador = respuesta;
         console.log(data);
+
+        const content = Object.entries(data)
+        .map(([key, value]) => `${key}: ${value}`)
+        .join('\n');
+    
+      const blob = new Blob([content], { type: 'text/plain' });
+      const fileName = 'datos_medicos.txt';
+    
+      if (window.navigator && window.navigator.msSaveOrOpenBlob) {
+        window.navigator.msSaveOrOpenBlob(blob, fileName);
+      } else {
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = fileName;
+        link.click();
+      }
+
     }
 
     const handleRespuestaChange = (e) => {
