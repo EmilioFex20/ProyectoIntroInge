@@ -1,11 +1,13 @@
-
 import 'dart:async';
-
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_application_1/mapaparareportar.dart';
-import 'package:image_picker/image_picker.dart';
+import 'package:image_picker/image_picker.dart'; //libreria para subir imágenes
+import 'package:permission_handler/permission_handler.dart'; //libreria para el
+//manejo de los permisos de ubicación
+import 'package:geolocator/geolocator.dart'; //libreria para implementar la geolocalización
 import 'dart:io';
+
 //import 'package:flutter_application_1/firstscreen.dart';
 
 class ReportarScreen extends StatefulWidget {
@@ -17,10 +19,18 @@ class ReportarScreen extends StatefulWidget {
 }
 
 class _ReportarScreenState extends State<ReportarScreen> {
-  String _enteredText = '';
-  XFile? image;
+  String _enteredText = ''; //variable que contendrá nuestro texto
+  XFile? image; //variable a la cual se le guardan imagenes
 
   final ImagePicker picker = ImagePicker();
+
+  final myController = TextEditingController();
+  @override
+  void dispose() {
+    // Limpiar el controlador cuando se desecha el widget.
+    myController.dispose();
+    super.dispose();
+  }
 
   //podemos subir una imagen desde la cámara o la galeria, dependiendo el parámetro
   Future getImage(ImageSource media) async {
@@ -39,7 +49,7 @@ class _ReportarScreenState extends State<ReportarScreen> {
           return AlertDialog(
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-            title: const Text('Please choose media to select'),
+            title: const Text('Selecciona un medio'),
             content: SizedBox(
               height: MediaQuery.of(context).size.height / 6,
               child: Column(
@@ -77,6 +87,8 @@ class _ReportarScreenState extends State<ReportarScreen> {
         });
   }
 
+  final permissionLocation = Permission.location;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -112,11 +124,44 @@ class _ReportarScreenState extends State<ReportarScreen> {
                   ),
                 ),
               ),
+              Center(
+                child: Padding(
+                  padding: const EdgeInsets.all(20.0),
+                  child: Container(
+                    height: 50,
+                    width: 250,
+                    decoration: BoxDecoration(
+                        color: Colors.blue,
+                        borderRadius: BorderRadius.circular(20)),
+                    child: TextButton(
+                      onPressed: () async {
+                        final status = await permissionLocation.request();
+                        if (status == PermissionStatus.granted) {
+                          // Obtener la ubicación actual
+                          final position =
+                              await Geolocator.getCurrentPosition();
+                          /*print(
+                              'Latitud: ${position.latitude}, Longitud: ${position.longitude}');*/
+                        } else {
+                          // Permiso denegado
+                          //print('Permiso de ubicación denegado.');
+                        }
+                      },
+                      child: const Text(
+                        'Usar ubicación actual',
+                        style: TextStyle(color: Colors.white, fontSize: 20),
+                      ),
+                    ),
+                  ),
+                ),
+              ),
               Padding(
                 padding: const EdgeInsets.all(15.0),
                 child: SizedBox(
                   width: double.infinity,
                   child: TextField(
+                      //cuadro para ingresar texto
+                      controller: myController,
                       onChanged: (value) {
                         setState(() {
                           _enteredText = value;

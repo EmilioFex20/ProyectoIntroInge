@@ -1,21 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/mapareportes.dart';
-import 'package:flutter_application_1/mapasoluciones.dart';
-import 'package:flutter_application_1/tiposdereportes.dart';
+import 'package:flutter_application_1/reportar.dart';
 
-class PantallaInicio extends StatefulWidget {
-  const PantallaInicio({super.key});
+class TiposDeReportes extends StatefulWidget {
+  const TiposDeReportes({super.key});
 
   @override
-  PantallaInicioState createState() => PantallaInicioState();
+  TiposDeReportesState createState() => TiposDeReportesState();
 }
 
-class PantallaInicioState extends State<PantallaInicio> {
+class TiposDeReportesState extends State<TiposDeReportes> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Inicio"),
+        title: const Text("Reportar"),
       ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -35,11 +33,11 @@ class PantallaInicioState extends State<PantallaInicio> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const TiposDeReportes()),
+                          builder: (context) => const ReportarScreen()),
                     );
                   },
                   child: const Text(
-                    'Reportar',
+                    'Personas',
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ),
@@ -60,11 +58,11 @@ class PantallaInicioState extends State<PantallaInicio> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MapadeReportes()),
+                          builder: (context) => const ReportarScreen()),
                     );
                   },
                   child: const Text(
-                    'Mapa de Reportes',
+                    'Mascotas',
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ),
@@ -85,11 +83,11 @@ class PantallaInicioState extends State<PantallaInicio> {
                     Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const MapaSoluciones()),
+                          builder: (context) => const ReportarScreen()),
                     );
                   },
                   child: const Text(
-                    'Mapa de soluciones',
+                    'Otros',
                     style: TextStyle(color: Colors.white, fontSize: 25),
                   ),
                 ),

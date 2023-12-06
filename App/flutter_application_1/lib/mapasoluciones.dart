@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
-class MapadeReportes extends StatefulWidget {
-  const MapadeReportes({super.key});
+class MapaSoluciones extends StatefulWidget {
+  const MapaSoluciones({super.key});
 
   @override
-  MapadeReportesScreenState createState() => MapadeReportesScreenState();
+  MapaSolucionesScreenState createState() => MapaSolucionesScreenState();
 }
 
-class MapadeReportesScreenState extends State<MapadeReportes> {
+class MapaSolucionesScreenState extends State<MapaSoluciones> {
   static const _initialCameraPosition = CameraPosition(
       target: LatLng(32.62311109650443, -115.45107453997345), zoom: 11.5);
 
