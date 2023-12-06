@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_application_1/loginscreen.dart';
+import 'package:flutter_application_1/iniciosesion.dart';
 
 class CreateAccountScreen extends StatefulWidget {
   const CreateAccountScreen({super.key});
 
   @override
-  _CreateAccountScreenState createState() => _CreateAccountScreenState();
+  CreateAccountScreenState createState() => CreateAccountScreenState();
 }
 
-class _CreateAccountScreenState extends State<CreateAccountScreen> {
+class CreateAccountScreenState extends State<CreateAccountScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -55,6 +55,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Center(
+                //casilla de verificación
                 child: CheckboxExample(),
               ),
             ],
@@ -71,7 +72,7 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const Loginscreen()),
+                        builder: (context) => const InicioSesion()),
                   );
                 },
                 child: const Text(
@@ -88,6 +89,8 @@ class _CreateAccountScreenState extends State<CreateAccountScreen> {
 }
 
 class CheckboxExample extends StatefulWidget {
+//clase para el funcionamiento de
+// la casilla de verificación
   const CheckboxExample({super.key});
 
   @override

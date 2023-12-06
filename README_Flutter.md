@@ -1,0 +1,2 @@
+Para darle funcionamiento a los mapas de google se ocupa una llave de API, la cual se debe de ingresar en App\flutter_application_1\android\app\src\main\AndroidManifest.xml
+android:value="TU LLAVE DE API"

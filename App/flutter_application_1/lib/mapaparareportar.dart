@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_maps_flutter/google_maps_flutter.dart';
-//import 'package:flutter_application_1/loginscreen.dart';
-//import 'package:flutter_application_1/reportar.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart'; //libreria para implementar google maps
 
 class MapaParaReportar extends StatefulWidget {
   const MapaParaReportar({super.key});
@@ -12,7 +10,9 @@ class MapaParaReportar extends StatefulWidget {
 
 class MapaParaReportarScreenState extends State<MapaParaReportar> {
   static const _initialCameraPosition = CameraPosition(
-      target: LatLng(32.62311109650443, -115.45107453997345), zoom: 11.5);
+      //Posición inicial es la ubicación de mexicali
+      target: LatLng(32.62311109650443, -115.45107453997345),
+      zoom: 11.5);
 
   late GoogleMapController _googleMapController;
   Map<MarkerId, Marker> markers = <MarkerId, Marker>{};
@@ -37,10 +37,16 @@ class MapaParaReportarScreenState extends State<MapaParaReportar> {
               compassEnabled: true,
               tiltGesturesEnabled: false,
               onLongPress: (latlang) {
-                _addMarkerLongPressed(
-                    latlang); //we will call this function when pressed on the map
+                _addMarkerLongPressed(latlang);
+                /*print(
+                    latlang);*/
+                //llamaremos esta función cuando se presione en el mapa
+                //para imprimir la latitud y longitud
+                //NOTA: el print esta de ejemplo, no se debe de usar en código de producción
               },
-              markers: Set<Marker>.of(markers.values), //all markers are here
+
+              markers:
+                  Set<Marker>.of(markers.values), //variable para marcadores
             ))
       ]),
     );
@@ -53,7 +59,7 @@ class MapaParaReportarScreenState extends State<MapaParaReportar> {
         markerId: markerId,
         draggable: true,
         position:
-            latlang, //With this parameter you automatically obtain latitude and longitude
+            latlang, //Con este parámetro obtienes automáticamente la latitud y longitud
         infoWindow: const InfoWindow(
           title: "Marker here",
           snippet: 'This looks good',
@@ -63,9 +69,5 @@ class MapaParaReportarScreenState extends State<MapaParaReportar> {
 
       markers[markerId] = marker;
     });
-
-    //This is optional, it will zoom when the marker has been created
-    //GoogleMapController controller = await _controller.future;
-    //controller.animateCamera(CameraUpdate.newLatLngZoom(latlang, 17.0));
   }
 }
